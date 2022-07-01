@@ -61,9 +61,6 @@ Sub stockLooper():
         'add to the volume total
         Volume_Total = Volume_Total + Cells(I, 7).Value
         
-        'set the first open for each ticker
-        'First_Open = Cells(i + 1, 3).Value
-        
         'set the last closing for each ticker
         Last_Close = Cells(I, 6).Value
         
@@ -92,6 +89,7 @@ Sub stockLooper():
         'reset the volume total
         Volume_Total = 0
         
+        'set the first open for each ticker
         First_Open = Cells(I + 1, 3).Value
         
         'if cell immediately folowing a row is the same ticker...
@@ -113,8 +111,7 @@ Sub stockLooper():
     'Autofit all cells in Summary Columns
     Range("I:L").EntireColumn.AutoFit
     
-    'format column J (Yearly Change) to shade green when positive change, red when negative change, and
-    'yellow when no net change (zero)
+    'format column J (Yearly Change) to shade green when positive change and red when negative change
       'inner loop to loop through all YearlyChanges
       For x = 2 To LastRow
       
@@ -132,19 +129,5 @@ Sub stockLooper():
 
   Next ws
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 End Sub
 
